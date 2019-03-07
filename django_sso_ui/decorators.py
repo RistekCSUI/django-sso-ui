@@ -17,7 +17,7 @@ from .utils import (
 )
 
 
-def with_sso_login(force_login=True):
+def with_sso_ui(force_login=True):
     def decorator(func):
         def wrapper(request, *args, **kwargs):
             service_url = get_service_url(request)

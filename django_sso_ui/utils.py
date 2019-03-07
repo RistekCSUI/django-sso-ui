@@ -10,7 +10,7 @@ def normalize_username(username):
 
 
 def get_protocol(request):
-    if request.is_secure() or django_settings.SSO_FORCE_SERVICE_HTTPS:
+    if request.is_secure() or django_settings.SSO_UI_FORCE_SERVICE_HTTPS:
         return "https"
 
     return "http"
@@ -25,7 +25,7 @@ def get_service_url(request, redirect_to=None):
 
 
 def get_cas_client(service_url=None, request=None):
-    server_url = django_settings.SSO_URL
+    server_url = django_settings.SSO_UI_URL
     if server_url and request and server_url.startswith("/"):
         scheme = request.META.get("X-Forwarded-Proto", request.scheme)
         server_url = scheme + "://" + request.META["HTTP_HOST"] + server_url
