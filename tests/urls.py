@@ -1,6 +1,6 @@
 from django.urls import path
 from django.http import HttpResponse
-from django_sso.decorators import with_sso_login
+from django_sso_ui.decorators import with_sso_login
 import json
 
 
